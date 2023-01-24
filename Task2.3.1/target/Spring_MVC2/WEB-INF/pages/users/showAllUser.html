@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Users</title>
+    <style>
+        .table {
+            width: 600px;
+            margin-bottom: 20px;
+            border: 1px solid #dddddd;
+            border-collapse: collapse;
+            margin: 0 30px 0 30px;
+        }
+
+        .table th {
+            font-weight: bold;
+            padding: 5px;
+            background: #efefef;
+            border: 1px solid #dddddd;
+        }
+
+        .table td {
+            border: 1px solid #dddddd;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <h1> User List</h1>
+    <br>
+    <div>
+        <table class="table">
+            <tr>
+                <th> id</th>
+                <th> Name</th>
+                <th> Surname</th>
+                <th> Email</th>
+            </tr>
+            <tr th:each="user : ${users}">
+                <td th:text="${user.getId()}">user</td>
+                <td th:text="${user.getName()}">user</td>
+                <td th:text="${user.getSurname()}">user</td>
+                <td th:text="${user.getEmail()}">user</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<a href="/users/editUsers">Edit</a>
+<a href="/users/new">Create</a>
+</body>
+</html>
